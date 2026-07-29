@@ -1,0 +1,18 @@
+Vibecheck is a private, local-first mood and symptom tracker designed for complete privacy, ease of use, and low friction.
+
+<b>Features</b>
+<ul>
+<li>1-Tap Quick Logging: Log your mood in seconds with minimal friction</li>
+<li>Symptom & Energy Tracking: Track focus, energy, sensory levels, and sleep</li>
+<li>Dopamine Menu: Grounding exercises and gentle prompts for self-regulation</li>
+<li>Calendar Heatmap & Insights: Spot patterns and understand your mental health over time</li>
+<li>Custom Moods & Tags: Personalize your tracking experience</li>
+<li>JSON Data Export & Import: Complete ownership of your data</li>
+<li>100% Offline: Operates completely on-device without internet access</li>
+</ul>
+
+<b>Privacy</b>
+No data ever leaves your device. No cloud sync, no user accounts, no analytics, no ads, no third-party tracking SDKs.
+
+<b>Open Source</b>
+Licensed under the MIT License. Source code available on GitHub.

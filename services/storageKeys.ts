@@ -1,0 +1,12 @@
+export const USER_NAME_KEY = 'vibecheck_username';
+export const ONBOARDING_DONE_KEY = 'vibecheck_onboarding_done';
+export const CUSTOM_TAGS_KEY = 'vibecheck_custom_tags';
+export const HIDDEN_DEFAULTS_KEY = 'vibecheck_hidden_defaults';
+export const NOTIFICATIONS_KEY = 'vibecheck_notifications';
+export const THEME_PREF_KEY = 'vibecheck_theme_pref';
+export const TAG_FREQUENCY_KEY = 'vibecheck_tag_frequency';
+export const HIDDEN_SYMPTOMS_KEY = 'vibecheck_hidden_symptoms';
+export const NAV_LABELS_KEY = 'vibecheck_nav_labels';
+export const TAG_COLORS_KEY = 'vibecheck_tag_colors';
+export const CUSTOM_CATEGORIES_KEY = 'vibecheck_custom_categories';
+export const CUSTOM_MOODS_KEY = 'vibecheck_custom_moods';

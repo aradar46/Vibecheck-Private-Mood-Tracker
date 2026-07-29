@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vibecheck</string>
+    <string name="title_activity_main">Vibecheck: Private Mood Tracker</string>
+    <string name="package_name">com.aradar.vibecheck</string>
+    <string name="custom_url_scheme">com.aradar.vibecheck</string>
+    <string name="widget_description">Quick mood logging from your home screen</string>
+    <string name="widget_trends_description">Weekly mood trends with colorful vibes</string>
+</resources>

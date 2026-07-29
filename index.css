@@ -1,0 +1,126 @@
+/* Material Symbols Outlined - bundled locally from npm package */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('/material-symbols-outlined.woff2') format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-smoothing: antialiased;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Theme (Rose) */
+  --brand-main: #FF6B6B;
+  --brand-light: #FFF5F5;
+  --brand-dark: #E64A4A;
+  --brand-text: #FFFFFF;
+
+  /* Organic Mood Palette */
+  --watercolor-mint: #e0f7f4;
+  --watercolor-sun: #fff9db;
+  --watercolor-rose: #fdf2f0;
+  --soft-teal: #4fd1c5;
+  --soft-amber: #f6ad55;
+  --soft-coral: #fc8181;
+}
+
+body {
+  font-family: 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F8F4F0;
+}
+
+.dark body {
+  background-color: #1A1B2E;
+}
+
+/* Organic Mood UI Styles */
+.blob-1 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.blob-2 {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+.blob-3 {
+  border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+}
+
+.blob-4 {
+  border-radius: 30% 70% 70% 30% / 50% 30% 70% 50%;
+}
+
+.blob-5 {
+  border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+}
+
+.watercolor-wash-green {
+  background: radial-gradient(circle at center, rgba(79, 209, 197, 0.2) 0%, rgba(79, 209, 197, 0.05) 100%);
+}
+
+.watercolor-wash-yellow {
+  background: radial-gradient(circle at center, rgba(246, 173, 85, 0.2) 0%, rgba(246, 173, 85, 0.05) 100%);
+}
+
+.watercolor-wash-red {
+  background: radial-gradient(circle at center, rgba(252, 129, 129, 0.2) 0%, rgba(252, 129, 129, 0.05) 100%);
+}
+
+.dark .watercolor-wash-green {
+  background: radial-gradient(circle at center, rgba(79, 209, 197, 0.15) 0%, rgba(79, 209, 197, 0.02) 100%);
+}
+
+.dark .watercolor-wash-yellow {
+  background: radial-gradient(circle at center, rgba(246, 173, 85, 0.15) 0%, rgba(246, 173, 85, 0.02) 100%);
+}
+
+.dark .watercolor-wash-red {
+  background: radial-gradient(circle at center, rgba(252, 129, 129, 0.15) 0%, rgba(252, 129, 129, 0.02) 100%);
+}
+
+.watercolor-wash-orange {
+  background: radial-gradient(circle at center, rgba(251, 169, 136, 0.25) 0%, rgba(251, 169, 136, 0.08) 100%);
+}
+
+.dark .watercolor-wash-orange {
+  background: radial-gradient(circle at center, rgba(251, 169, 136, 0.15) 0%, rgba(251, 169, 136, 0.02) 100%);
+}
+
+.watercolor-wash-mint {
+  background: radial-gradient(circle at center, rgba(149, 213, 178, 0.25) 0%, rgba(149, 213, 178, 0.08) 100%);
+}
+
+.dark .watercolor-wash-mint {
+  background: radial-gradient(circle at center, rgba(149, 213, 178, 0.15) 0%, rgba(149, 213, 178, 0.02) 100%);
+}
+
+/* Hide scrollbar for clean UI */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

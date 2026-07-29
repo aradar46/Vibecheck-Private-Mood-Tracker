@@ -1,0 +1,41 @@
+# Node dependencies & build outputs
+node_modules/
+dist/
+dist-ssr/
+*.log
+
+# Environment & secrets
+.env
+.env*.local
+*.keystore
+*.jks
+*.p12
+*.pem
+secrets/
+
+# Generated mockup data (recreate with: node generate_mockup_data.mjs)
+mockup_data.json
+
+# Raw unprocessed screenshot captures; committed copies live in screenshots/
+ss/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Syncthing
+.stfolder/
+.stversions/
+*.sync-conflict-*
+
+# Android local build artifacts & properties
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/keystore.properties
+android/app/google-services.json
+*.apk
+*.aab

@@ -1,0 +1,6 @@
+Initial release of Vibecheck on F-Droid.
+
+• 1-tap quick mood logging with custom tags and symptoms.
+• Dopamine Menu for grounding and self-regulation.
+• Calendar heatmap and insights to track mood trends over time.
+• 100% offline, local-first storage with full data import/export.
