@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Mood, Tag, Entry, SymptomsData, Category, CustomMood } from '../types';
 import { MOODS, CATEGORY_COLORS } from '../constants';
 import Button from './Button';
-import { Mic, Check, StopCircle, X, Calendar as CalendarIcon, Plus, Trash2, Edit, ChevronDown, ChevronUp } from 'lucide-react';
+import { Check, X, Calendar as CalendarIcon, Plus, Trash2, Edit, ChevronDown, ChevronUp } from 'lucide-react';
 import { getAllTags, saveCustomTag, getTagFrequency, toggleTagHidden, getCategories, getCustomMoods, getTagColorsEnabled } from '../services/storage';
 import Fuse from 'fuse.js';
-import { SpeechRecognition } from '@capacitor-community/speech-recognition';
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 const ORGANIC_MOODS = {
@@ -81,8 +80,6 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
   // Lock to prevent double submissions
   const isSubmittingRef = useRef(false);
 
-  // Voice Recording State
-  const [isRecording, setIsRecording] = useState(false);
 
   useEffect(() => {
     const initTags = async () => {
@@ -157,59 +154,6 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
     const cat = categories.find(c => c.id === category);
     if (!cat) return NEUTRAL_TAG_STYLE;
     return CATEGORY_COLORS[cat.colorId] || CATEGORY_COLORS['gray'];
-  };
-
-  const toggleRecording = async () => {
-    if (isRecording) {
-      try {
-        await SpeechRecognition.stop();
-        setIsRecording(false);
-      } catch (err) {
-        console.error("Error stopping speech recognition", err);
-        setIsRecording(false);
-      }
-    } else {
-      try {
-        // Check if permission is available
-        const { available } = await SpeechRecognition.available();
-        if (!available) {
-          alert("Voice dictation is not available on this device.");
-          return;
-        }
-
-        // Request permissions if needed
-        const permission = await SpeechRecognition.requestPermissions();
-        if (permission.speechRecognition !== 'granted') {
-          alert("Microphone permission is required for voice notes.");
-          return;
-        }
-
-        setIsRecording(true);
-
-        // Start listening and get results
-        const result = await SpeechRecognition.start({
-          language: "en-US",
-          maxResults: 5,
-          prompt: "Speak your thoughts...",
-          partialResults: true,
-          popup: true
-        });
-
-        // When done, append the result
-        if (result && result.matches && result.matches.length > 0) {
-          const transcript = result.matches[0];
-          setNote(prev => prev + (prev.length > 0 && !prev.endsWith(' ') ? ' ' : '') + transcript);
-        }
-
-        setIsRecording(false);
-      } catch (err: any) {
-        console.error("Speech recognition error", err);
-        if (err.message && !err.message.includes('cancelled')) {
-          alert("Failed to start voice recording. Please check microphone permissions.");
-        }
-        setIsRecording(false);
-      }
-    }
   };
 
   const handleMoodSelect = async (mood: Mood, customMoodsToInclude: string[] = []) => {
@@ -737,21 +681,10 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder="Brain dump here..."
-                className={`w-full p-3 rounded-2xl bg-brand-light dark:bg-navy-surface border-2 border-transparent dark:border-navy-border focus:border-brand focus:ring-0 resize-none h-24 text-sm text-warmGray dark:text-nearWhite transition-colors ${isRecording ? 'border-red-300 bg-red-50 dark:bg-red-900/20' : ''}`}
+                className="w-full p-3 rounded-2xl bg-brand-light dark:bg-navy-surface border-2 border-transparent dark:border-navy-border focus:border-brand focus:ring-0 resize-none h-24 text-sm text-warmGray dark:text-nearWhite transition-colors"
               />
-              <button
-                onClick={toggleRecording}
-                className={`absolute bottom-4 right-4 p-3 rounded-full transition-all duration-200 shadow-sm ${isRecording
-                  ? 'bg-red-500 text-white animate-pulse scale-110 shadow-red-300'
-                  : 'bg-cream dark:bg-navy text-warmGray-medium dark:text-warmGray-light hover:text-brand hover:bg-brand-light'
-                  }`}
-                title="Voice Note"
-              >
-                {isRecording ? <StopCircle size={20} /> : <Mic size={20} />}
-              </button>
             </div>
           )}
-          {isRecording && <p className="text-xs text-red-500 font-bold mt-2 ml-1 animate-pulse">Recording... speak clearly</p>}
         </section>
 
         <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 bg-cream dark:bg-navy pt-3 pb-6 space-y-3 border-t border-brand-light/60 dark:border-navy-border z-30">

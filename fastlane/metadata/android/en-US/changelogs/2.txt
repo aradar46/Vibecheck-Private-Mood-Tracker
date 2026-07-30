@@ -1,0 +1,4 @@
+Fixes crashes when setting up reminders.
+
+• Fixed a crash when adding a mood check-in or medication reminder. Release builds stripped the annotations Capacitor uses to handle permission requests.
+• Removed voice notes and the microphone permission. The app no longer requests audio access at all.
