@@ -1,0 +1,5 @@
+Fixes unreadable tag colours and the status bar overlapping the logging screen.
+
+• Fixed unreadable tag labels. Category colours were being stripped from the stylesheet at build time, so some tags showed white text on a light background.
+• Selected tags now have an outline and a checkmark, so it is clear which ones you picked.
+• The logging screen no longer slides under the status bar. The close button and the "Details" header are fully visible again.

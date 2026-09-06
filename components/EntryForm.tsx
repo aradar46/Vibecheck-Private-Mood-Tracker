@@ -320,12 +320,14 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
           onClick={() => {
             onCancel();
           }}
-          className="absolute top-4 right-4 p-2 bg-brand-light dark:bg-navy-surface text-warmGray-medium dark:text-warmGray-light rounded-full hover:bg-peach-100 dark:hover:bg-navy-border transition-colors z-50"
+          className="absolute right-4 p-2 bg-brand-light dark:bg-navy-surface text-warmGray-medium dark:text-warmGray-light rounded-full hover:bg-peach-100 dark:hover:bg-navy-border transition-colors z-50"
+          style={{ top: 'max(1rem, calc(env(safe-area-inset-top) + 0.5rem))' }}
         >
           <X size={24} />
         </button>
 
-        <div className="flex flex-col items-center justify-center h-full px-6 py-8">
+        <div className="flex flex-col items-center justify-center h-full px-6 py-8"
+          style={{ paddingTop: 'max(2rem, calc(env(safe-area-inset-top) + 2rem))' }}>
           <div className="mb-4">
             <h3 className="text-warmGray dark:text-nearWhite text-2xl font-bold leading-tight text-center font-display">How's the vibe today?</h3>
             <p className="text-warmGray-medium dark:text-warmGray-light/70 text-sm mt-2 text-center">Take a second to listen to your heart and pick the emoji that matches your mood best!</p>
@@ -428,7 +430,8 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
 
   return (
     <div className="flex flex-col h-screen overflow-hidden animate-in slide-in-from-right duration-300 bg-cream dark:bg-navy">
-      <div className="sticky top-0 bg-cream/90 dark:bg-navy/90 backdrop-blur-sm z-20 flex items-center justify-between p-4 border-b border-brand-light dark:border-navy-border">
+      <div className="sticky top-0 bg-cream/90 dark:bg-navy/90 backdrop-blur-sm z-20 flex items-center justify-between p-4 border-b border-brand-light dark:border-navy-border"
+        style={{ paddingTop: 'max(1rem, calc(env(safe-area-inset-top) + 0.5rem))' }}>
         <button onClick={() => setStep(1)} className="p-2 -ml-2 text-warmGray-medium hover:text-warmGray dark:text-warmGray-light dark:hover:text-nearWhite">
           <span className="text-sm font-bold">← Back</span>
         </button>
@@ -630,12 +633,13 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
                 key={tag.id}
                 onClick={() => toggleTag(tag.id)}
                 className={`
-                  px-3 py-1.5 rounded-full text-xs font-bold transition-all border whitespace-nowrap shadow-sm
+                  px-3 py-1.5 rounded-full text-xs font-bold transition-all border whitespace-nowrap shadow-sm flex items-center gap-1
                   ${selectedTags.includes(tag.id)
-                    ? 'bg-brand text-brand-text border-brand scale-105 shadow-md z-10'
+                    ? 'bg-brand text-brand-text border-brand-dark ring-2 ring-brand-dark ring-offset-1 ring-offset-cream dark:ring-offset-navy scale-105 shadow-md z-10'
                     : `${getCategoryStyles(tag.category)} hover:border-brand hover:scale-105`}
                 `}
               >
+                {selectedTags.includes(tag.id) && <Check size={12} strokeWidth={4} />}
                 {tag.label}
               </button>
             ))}
@@ -687,7 +691,8 @@ const EntryForm: React.FC<EntryFormProps> = ({ onSubmit, onCancel, initialDate, 
           )}
         </section>
 
-        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 bg-cream dark:bg-navy pt-3 pb-6 space-y-3 border-t border-brand-light/60 dark:border-navy-border z-30">
+        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 bg-cream dark:bg-navy pt-3 pb-6 space-y-3 border-t border-brand-light/60 dark:border-navy-border z-30"
+          style={{ paddingBottom: 'max(1.5rem, calc(env(safe-area-inset-bottom) + 0.75rem))' }}>
           <div className="flex flex-col items-center gap-2 text-center">
             <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
               <Check className="w-5 h-5" />
