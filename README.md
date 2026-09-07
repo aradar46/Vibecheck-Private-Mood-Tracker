@@ -2,6 +2,8 @@
 
 Vibecheck is a private, local-first, low-friction mood and symptom tracker designed for complete privacy and ease of use.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O3I6243PUS)
+
 ## Screenshots
 
 | Quick Log | Timeline | Insights | Calendar |
