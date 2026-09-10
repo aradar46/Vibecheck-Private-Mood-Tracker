@@ -58,4 +58,4 @@ The output APK will be generated at `android/app/build/outputs/apk/release/app-r
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE).
